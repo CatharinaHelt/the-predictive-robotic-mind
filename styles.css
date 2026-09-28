@@ -41,6 +41,32 @@ body {
     var(--navy);
 }
 
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(360px, .95fr);
+  gap: 56px;
+  align-items: center;
+}
+
+.hero-copy { min-width: 0; }
+
+.hero-video {
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.13);
+  border-radius: 16px;
+  background: #02060b;
+  box-shadow: 0 28px 70px rgba(0,0,0,.30);
+}
+
+.hero-video video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  background: #000;
+}
+
 .talk-badge {
   display: inline-flex;
   flex-wrap: wrap;
@@ -78,9 +104,9 @@ h1, h2, p { margin-top: 0; }
 h1, h2 { line-height: 1.08; letter-spacing: -.045em; }
 
 h1 {
-  max-width: 850px;
+  max-width: 650px;
   margin-bottom: 12px;
-  font-size: clamp(3rem, 8vw, 6.6rem);
+  font-size: clamp(2.8rem, 5.6vw, 5.4rem);
   font-weight: 800;
 }
 
@@ -92,7 +118,7 @@ h1 {
 }
 
 .hero-text {
-  max-width: 760px;
+  max-width: 650px;
   margin-bottom: 26px;
   color: #9fb0c6;
   font-size: 1.05rem;
@@ -212,6 +238,11 @@ footer {
   display: flex;
   justify-content: space-between;
   gap: 20px;
+}
+
+@media (max-width: 900px) {
+  .hero-grid { grid-template-columns: 1fr; gap: 38px; }
+  .hero-video { max-width: 720px; }
 }
 
 @media (max-width: 760px) {
